@@ -13,15 +13,20 @@ type Page struct {
 	Body  []byte
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+	title := r.URL.Path[len("/hello/"):]
+	fmt.Fprintf(w, "Hi there, I love %s!", title)
+}
 
+
+func viewHandler2(w http.ResponseWriter, r *http.Request) {
 	title := r.URL.Path[len("/hello/"):]
 	fmt.Fprintf(w, "Hi there, I love %s!", title)
 }
 
 
 func main() {
-http.HandleFunc("/view/", viewHandler)
+http.HandleFunc("/hello/", helloHandler)
 log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
