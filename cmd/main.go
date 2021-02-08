@@ -39,7 +39,7 @@ func loadPage(title string) (*Page, error) {
 	}
 	return &Page{Title: title, Body: body}, nil
 }
-//view handler function now again
+//view handler function now again again
 func viewHandler(w http.ResponseWriter, r *http.Request) {
 	title := r.URL.Path[len("/view/"):]
 	p, _ := loadPage(title)
