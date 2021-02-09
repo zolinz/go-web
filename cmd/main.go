@@ -19,7 +19,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 
-func viewHandler2(w http.ResponseWriter, r *http.Request) {
+func viewHandler3(w http.ResponseWriter, r *http.Request) {
 	title := r.URL.Path[len("/hello/"):]
 	fmt.Fprintf(w, "Hi there, I love %s!", title)
 }

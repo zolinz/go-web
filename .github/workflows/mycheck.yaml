@@ -1,8 +1,8 @@
-name: lint
+name: Mycheck
 on: pull_request
 
 jobs:
-  lint:
+  Mycheck:
     name: Mycheck
     runs-on: ubuntu-latest
     steps:
