@@ -1,0 +1,10 @@
+name: lint
+on: pull_request
+
+jobs:
+  lint:
+    name: Mycheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: script/mycheck.sh "$GITHUB_SHA" "$GITHUB_REF"
